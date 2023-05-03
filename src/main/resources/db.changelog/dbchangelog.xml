@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
+      http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.5.xsd">
+
+    <include file="changeset/grant-privileges.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/create-schema.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/create-discount-card-table.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/create-product-table.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/create-users-table.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/insert-product-data.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/insert-discount-card-data.xml" relativeToChangelogFile="true"/>
+    <include file="changeset/insert-users-data.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
+
+

@@ -1,8 +1,12 @@
 package com.console.ticket.util;
 
+import com.console.ticket.entity.User;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.experimental.UtilityClass;
+
+import java.io.IOException;
 
 @UtilityClass
 public class ServletsUtil {
@@ -37,7 +41,7 @@ public class ServletsUtil {
             throw new NumberFormatException();
         }
 
-        return Boolean.getBoolean(parameter);
+        return parameter.equalsIgnoreCase("true");
     }
 
     public static double getDoubleParameterFromRequest(HttpServletRequest req, String paramName) throws NumberFormatException {
@@ -58,5 +62,16 @@ public class ServletsUtil {
         }
 
         return Integer.parseInt(parameter);
+    }
+
+    public static void forwardToPageByRole(HttpServletRequest req, HttpServletResponse resp, User currentUser) throws ServletException, IOException {
+        switch (currentUser.getRole()) {
+            case ADMIN -> {
+                req.getRequestDispatcher(JspHelper.getPath("admin", "admin-actions")).forward(req, resp);
+            }
+            case USER -> {
+                req.getRequestDispatcher(JspHelper.getPath("user", "user-actions")).forward(req, resp);
+            }
+        }
     }
 }

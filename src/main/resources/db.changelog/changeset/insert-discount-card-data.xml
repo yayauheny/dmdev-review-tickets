@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<changeSet author="yayauheny" id="6">
+<sql>
+    INSERT INTO company.discount_card (discount)
+    VALUES (0.1),
+           (2.5),
+           (3),
+           (2),
+           (3.5),
+           (4),
+           (2),
+           (5.5),
+           (6),
+           (7.5),
+           (8),
+           (8.5),
+           (9),
+           (10) ON CONFLICT DO NOTHING;
+</sql>
+</changeSet>
+        </databaseChangeLog>

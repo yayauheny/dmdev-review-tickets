@@ -20,6 +20,7 @@
 Для web:
 - Запустить проект используя tomcat, проставив в war сгенерированный gradle war (exploded)
 - Ввести в адресную строку http://localhost:8080/auth - при регистрации ввести существующий id карты (discount_card) - иначе кинет ошибку
+  
 Для console:
 - Запустить TicketRunner
 - Ввести с консоли данные в формате id-quantity id-quantity card-cardID , где id - id товара,  quantity - количество товара,
